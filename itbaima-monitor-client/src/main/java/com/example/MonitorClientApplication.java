@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ItbaimaMonitorClientApplication {
+public class MonitorClientApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ItbaimaMonitorClientApplication.class, args);
+        SpringApplication.run(MonitorClientApplication.class, args);
     }
 
 }

@@ -25,6 +25,7 @@ public class ClientServiceImpl extends ServiceImpl<ClientMapper, Client> impleme
     @Override
     public boolean verifyAndRegister(String token) {
         if (this.registerToken.equals(token)) {
+            System.out.println(token);
             int id = this.randomClientId();
             Client client = new Client(id,"未命名主机",token,new Date());
             if (this.save(client)){
@@ -68,10 +69,11 @@ public class ClientServiceImpl extends ServiceImpl<ClientMapper, Client> impleme
     private String generateNewToken() {
         String CHARACTERS = "abcdefghijklmopqrstuvwxyzABCDEFGHIJKLMOPARSTUVWXYZ0123456789";
         SecureRandom random = new SecureRandom();
-        StringBuilder tokenBuilder = new StringBuilder();
+        StringBuilder tokenBuilder = new StringBuilder(24);
         for (int i = 0; i < 24; i++) {
             tokenBuilder.append(CHARACTERS.charAt(random.nextInt(CHARACTERS.length())));
         }
+        System.out.println(tokenBuilder);
         return tokenBuilder.toString();
     }
 }
