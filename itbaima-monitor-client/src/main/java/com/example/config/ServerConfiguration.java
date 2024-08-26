@@ -2,6 +2,7 @@ package com.example.config;
 
 import com.alibaba.fastjson2.JSONObject;
 import com.example.entity.ConnectionConfig;
+import com.example.utils.MonitorUtils;
 import com.example.utils.NetUtils;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
@@ -19,6 +20,9 @@ public class ServerConfiguration {
     @Resource
     NetUtils net;
 
+    @Resource
+    MonitorUtils monitor;
+
     @Bean
     ConnectionConfig connectionConfig(){
         log.info("正在加载服务端连接配置...");
@@ -26,6 +30,7 @@ public class ServerConfiguration {
         if (config == null){
             config = this.registerToServer();
         }
+        System.out.println(monitor.monitorBaseDetail());
         return config;
     }
 
