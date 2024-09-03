@@ -2,7 +2,6 @@ package com.example.utils;
 
 import com.example.entity.BaseDetail;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import oshi.SystemInfo;
 import oshi.hardware.HardwareAbstractionLayer;
